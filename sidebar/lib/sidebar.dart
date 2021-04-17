@@ -50,6 +50,7 @@ class SideDrawer extends StatelessWidget {
               title: Text('About Us'),
               onTap: () => {Navigator.of(context).pop()},
             ),
+            Divider(),
             ListTile(
               trailing: Icon(
                 Icons.logout,
