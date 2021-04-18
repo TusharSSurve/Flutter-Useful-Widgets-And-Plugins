@@ -34,6 +34,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    double mediaquery = MediaQuery.of(context).size.width;
     return Scaffold(
       body: PageStorage(
         child: currentScreen,
@@ -55,7 +56,7 @@ class _HomeState extends State<Home> {
               Row(
                 children: [
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
                         currentScreen = Dashboard();
@@ -70,7 +71,7 @@ class _HomeState extends State<Home> {
                         Icon(Icons.home,
                             color: currentTab == 0 ? Colors.red : Colors.grey),
                         Text(
-                          'Dashboard',
+                          'Home',
                           style: TextStyle(
                               color:
                                   currentTab == 0 ? Colors.red : Colors.grey),
@@ -78,11 +79,8 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
                         currentScreen = Chat();
@@ -108,10 +106,9 @@ class _HomeState extends State<Home> {
                 ],
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
                         currentScreen = Profile();
@@ -135,7 +132,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
                         currentScreen = Setting();
