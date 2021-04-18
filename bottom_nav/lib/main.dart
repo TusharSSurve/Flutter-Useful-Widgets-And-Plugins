@@ -40,22 +40,23 @@ class _HomeState extends State<Home> {
         child: currentScreen,
         bucket: bucket,
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.camera),
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.camera),
+      //   onPressed: () {},
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        notchMargin: 0,
+
+        // notchMargin: ,
         child: Container(
-          height: 50,
+          height: 65,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
                   MaterialButton(
+                    shape: StadiumBorder(),
                     minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
@@ -66,7 +67,7 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 5,
+                          height: 15,
                         ),
                         Icon(Icons.home,
                             color: currentTab == 0 ? Colors.red : Colors.grey),
@@ -80,6 +81,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   MaterialButton(
+                    shape: StadiumBorder(),
                     minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
@@ -90,7 +92,7 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 5,
+                          height: 15,
                         ),
                         Icon(Icons.chat,
                             color: currentTab == 1 ? Colors.red : Colors.grey),
@@ -105,9 +107,22 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+              MaterialButton(
+                minWidth: mediaquery / 5,
+                onPressed: () {},
+                color: Colors.red,
+                textColor: Colors.white,
+                child: Icon(
+                  Icons.camera,
+                  size: 36,
+                ),
+                padding: EdgeInsets.all(16),
+                shape: CircleBorder(),
+              ),
               Row(
                 children: [
                   MaterialButton(
+                    shape: StadiumBorder(),
                     minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
@@ -118,7 +133,7 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 5,
+                          height: 15,
                         ),
                         Icon(Icons.location_history_rounded,
                             color: currentTab == 2 ? Colors.red : Colors.grey),
@@ -132,6 +147,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   MaterialButton(
+                    shape: StadiumBorder(),
                     minWidth: mediaquery / 5,
                     onPressed: () {
                       setState(() {
@@ -142,7 +158,7 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 5,
+                          height: 15,
                         ),
                         Icon(Icons.settings,
                             color: currentTab == 3 ? Colors.red : Colors.grey),
