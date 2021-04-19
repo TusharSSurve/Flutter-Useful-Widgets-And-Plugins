@@ -31,7 +31,7 @@ class MyHomePage extends StatelessWidget {
         children: [
           SpeedDialChild(
               child: Icon(Icons.add_a_photo_rounded),
-              label: 'Capture an image',
+              label: 'Capture image',
               onTap: () => print('Capture image')),
           SpeedDialChild(
               child: Icon(Icons.add_location_rounded),
