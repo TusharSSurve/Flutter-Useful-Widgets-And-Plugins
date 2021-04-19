@@ -40,15 +40,22 @@ class _HomeState extends State<Home> {
         child: currentScreen,
         bucket: bucket,
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(Icons.camera),
-      //   onPressed: () {},
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        height: 74.0,
+        width: 74.0,
+        child: FloatingActionButton(
+          elevation: 4,
+          child: Icon(
+            Icons.camera,
+            size: 50,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-
-        // notchMargin: ,
+        notchMargin: 7,
         child: Container(
           height: 65,
           child: Row(
@@ -70,12 +77,15 @@ class _HomeState extends State<Home> {
                           height: 15,
                         ),
                         Icon(Icons.home,
-                            color: currentTab == 0 ? Colors.red : Colors.grey),
+                            color: currentTab == 0
+                                ? Colors.red
+                                : Colors.grey.shade400),
                         Text(
                           'Home',
                           style: TextStyle(
-                              color:
-                                  currentTab == 0 ? Colors.red : Colors.grey),
+                              color: currentTab == 0
+                                  ? Colors.red
+                                  : Colors.grey.shade400),
                         )
                       ],
                     ),
@@ -95,29 +105,23 @@ class _HomeState extends State<Home> {
                           height: 15,
                         ),
                         Icon(Icons.chat,
-                            color: currentTab == 1 ? Colors.red : Colors.grey),
+                            color: currentTab == 1
+                                ? Colors.red
+                                : Colors.grey.shade400),
                         Text(
                           'Chat',
                           style: TextStyle(
-                              color:
-                                  currentTab == 1 ? Colors.red : Colors.grey),
+                              color: currentTab == 1
+                                  ? Colors.red
+                                  : Colors.grey.shade400),
                         )
                       ],
                     ),
                   ),
                 ],
               ),
-              MaterialButton(
-                minWidth: mediaquery / 5,
-                onPressed: () {},
-                color: Colors.red,
-                textColor: Colors.white,
-                child: Icon(
-                  Icons.camera,
-                  size: 36,
-                ),
-                padding: EdgeInsets.all(16),
-                shape: CircleBorder(),
+              SizedBox(
+                width: mediaquery / 5,
               ),
               Row(
                 children: [
@@ -136,12 +140,15 @@ class _HomeState extends State<Home> {
                           height: 15,
                         ),
                         Icon(Icons.location_history_rounded,
-                            color: currentTab == 2 ? Colors.red : Colors.grey),
+                            color: currentTab == 2
+                                ? Colors.red
+                                : Colors.grey.shade400),
                         Text(
                           'Profile',
                           style: TextStyle(
-                              color:
-                                  currentTab == 2 ? Colors.red : Colors.grey),
+                              color: currentTab == 2
+                                  ? Colors.red
+                                  : Colors.grey.shade400),
                         )
                       ],
                     ),
@@ -161,12 +168,15 @@ class _HomeState extends State<Home> {
                           height: 15,
                         ),
                         Icon(Icons.settings,
-                            color: currentTab == 3 ? Colors.red : Colors.grey),
+                            color: currentTab == 3
+                                ? Colors.red
+                                : Colors.grey.shade400),
                         Text(
                           'Setting',
                           style: TextStyle(
-                              color:
-                                  currentTab == 3 ? Colors.red : Colors.grey),
+                              color: currentTab == 3
+                                  ? Colors.red
+                                  : Colors.grey.shade400),
                         )
                       ],
                     ),
