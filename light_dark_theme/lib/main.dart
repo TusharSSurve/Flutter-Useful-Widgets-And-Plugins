@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:light_dark_theme/theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,9 +9,21 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return ChangeNotifierProvider<ThemeChanger>(
+      create: (_) => ThemeChanger(ThemeData.dark()),
+      child: MaterialAppWithTheme(),
+    );
+  }
+}
+
+class MaterialAppWithTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       title: 'Light Dark Theme',
       home: LightDark(),
+      theme: theme.getTheme(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -18,6 +32,7 @@ class MyApp extends StatelessWidget {
 class LightDark extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -25,18 +40,23 @@ class LightDark extends StatelessWidget {
           'Theme',
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
                 otherAccountsPictures: [
-                  IconButton(icon: Icon(Icons.wb_sunny), onPressed: () {})
+                  IconButton(
+                      icon: Icon(
+                        Icons.wb_sunny,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {
+                        print(_themeChanger.getTheme());
+
+                        _themeChanger.setTheme(ThemeData.light());
+                      })
                 ],
                 //Icons.nights_stay_outlined
                 accountName: Text(''),
