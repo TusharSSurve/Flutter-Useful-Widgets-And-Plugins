@@ -36,6 +36,8 @@ class LightDark extends StatelessWidget {
     Color col = _themeChanger.isDark == true ? Colors.white : Colors.black;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor:
+            _themeChanger.isDark == true ? Colors.black38 : Colors.white,
         centerTitle: true,
         title: Text(
           'Theme',
@@ -46,20 +48,27 @@ class LightDark extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(otherAccountsPictures: [
-              IconButton(
-                  icon: Icon(
-                    _themeChanger.isDark == true
-                        ? Icons.wb_sunny
-                        : Icons.nights_stay_outlined,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    _themeChanger.isDark == true
-                        ? _themeChanger.setTheme(ThemeData.light())
-                        : _themeChanger.setTheme(ThemeData.dark());
-                  })
-            ], accountName: Text(''), accountEmail: Text('')),
+            UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                    color: _themeChanger.isDark == true
+                        ? Colors.black38
+                        : Colors.white),
+                otherAccountsPictures: [
+                  IconButton(
+                      icon: Icon(
+                        _themeChanger.isDark == true
+                            ? Icons.wb_sunny
+                            : Icons.nights_stay_outlined,
+                        color: col,
+                      ),
+                      onPressed: () {
+                        _themeChanger.isDark == true
+                            ? _themeChanger.setTheme(ThemeData.light())
+                            : _themeChanger.setTheme(ThemeData.dark());
+                      })
+                ],
+                accountName: Text(''),
+                accountEmail: Text('')),
             ListTile(
               leading: Icon(Icons.home_outlined),
               title: Text(
