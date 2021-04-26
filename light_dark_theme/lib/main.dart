@@ -33,50 +33,46 @@ class LightDark extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
+    Color col = _themeChanger.isDark == true ? Colors.white : Colors.black;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           'Theme',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: col),
         ),
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: col),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
-                otherAccountsPictures: [
-                  IconButton(
-                      icon: Icon(
-                        Icons.wb_sunny,
-                        color: Colors.black,
-                      ),
-                      onPressed: () {
-                        print(_themeChanger.getTheme());
-
-                        _themeChanger.setTheme(ThemeData.light());
-                      })
-                ],
-                //Icons.nights_stay_outlined
-                accountName: Text(''),
-                accountEmail: Text('')),
+            UserAccountsDrawerHeader(otherAccountsPictures: [
+              IconButton(
+                  icon: Icon(
+                    _themeChanger.isDark == true
+                        ? Icons.wb_sunny
+                        : Icons.nights_stay_outlined,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    _themeChanger.isDark == true
+                        ? _themeChanger.setTheme(ThemeData.light())
+                        : _themeChanger.setTheme(ThemeData.dark());
+                  })
+            ], accountName: Text(''), accountEmail: Text('')),
             ListTile(
-              leading: Icon(
-                Icons.home,
-                color: Colors.black,
+              leading: Icon(Icons.home_outlined),
+              title: Text(
+                'Home',
+                style: TextStyle(color: col),
               ),
-              title: Text('Home'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.help,
-                color: Colors.black,
-              ),
-              title: Text('About'),
+              leading: Icon(Icons.help_outline),
+              title: Text('About', style: TextStyle(color: col)),
               onTap: () {
                 Navigator.pop(context);
               },
