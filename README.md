@@ -18,3 +18,6 @@
 ## Bottom Navigation Bar with Circular Button In-Between
 <img src="images/bottom nav 2.png" width="350">
 
+## Light/Dark Mode
+<img src="images/light dark mode.gif" width="350">
+
