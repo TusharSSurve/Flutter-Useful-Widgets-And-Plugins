@@ -1,4 +1,3 @@
-import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:scratcher/scratcher.dart';
 
@@ -11,29 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Scratch Card Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: ScratchCoupon(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class ScratchCoupon extends StatefulWidget {
-  @override
-  _ScratchCouponState createState() => _ScratchCouponState();
-}
-
-class _ScratchCouponState extends State<ScratchCoupon> {
-  ConfettiController controller;
-
-  @override
-  void initState() {
-    controller = ConfettiController(duration: Duration(seconds: 2));
-    super.initState();
-  }
-
+class ScratchCoupon extends StatelessWidget {
   Future<void> scratchCardDialog(BuildContext context, scratchKey) {
     return showDialog(
         context: context,
@@ -58,11 +41,6 @@ class _ScratchCouponState extends State<ScratchCoupon> {
               brushSize: 50,
               threshold: 75,
               onScratchEnd: () {
-                if (mounted) {
-                  setState(() {
-                    controller.play();
-                  });
-                }
                 scratchKey.currentState.reveal(duration: Duration(seconds: 2));
               },
               child: Container(
@@ -77,24 +55,16 @@ class _ScratchCouponState extends State<ScratchCoupon> {
                       width: 150,
                       height: 150,
                     ),
-                    Column(
-                      children: [
-                        ConfettiWidget(
-                          confettiController: controller,
-                          colors: [
-                            Colors.red,
-                            Colors.blue,
-                            Colors.orange,
-                            Colors.purple,
-                            Colors.lightBlue,
-                          ],
-                          blastDirectionality: BlastDirectionality.explosive,
-                          emissionFrequency: 0,
-                          numberOfParticles: 20,
-                        ),
-                        Text("You've won")
-                      ],
-                    )
+                    Text(
+                      "You won",
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+                    ),
+                    Text(
+                      "\$100",
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+                    ),
                   ],
                 ),
               ),
