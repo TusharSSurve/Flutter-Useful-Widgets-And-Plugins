@@ -85,9 +85,6 @@ class OnBoardingScreen extends StatelessWidget {
           Navigator.of(context)
               .pushReplacement(MaterialPageRoute(builder: (_) => Home()));
         },
-        // doneColor: Colors.black,
-        // skipColor: Colors.black,
-        // nextColor: Colors.black,
         color: Colors.black,
         globalBackgroundColor: Colors.white,
         showNextButton: true,
