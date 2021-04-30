@@ -79,18 +79,23 @@ class OnBoardingScreen extends StatelessWidget {
         ],
         done: Text(
           'Read',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         onDone: () {
           Navigator.of(context)
               .pushReplacement(MaterialPageRoute(builder: (_) => Home()));
         },
-        doneColor: Colors.black,
-        skipColor: Colors.black,
-        nextColor: Colors.black,
+        // doneColor: Colors.black,
+        // skipColor: Colors.black,
+        // nextColor: Colors.black,
+        color: Colors.black,
+        globalBackgroundColor: Colors.white,
         showNextButton: true,
         next: Icon(Icons.arrow_forward),
-        skip: Text('Skip'),
+        skip: Text(
+          'Skip',
+          style: TextStyle(fontSize: 18),
+        ),
         showSkipButton: true,
         dotsDecorator: DotsDecorator(
           color: Colors.grey,
