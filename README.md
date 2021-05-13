@@ -21,3 +21,5 @@
 ## Light/Dark Mode
 <img src="images/light dark mode.gif" width="350">
 
+## Material Banner
+<img src="images/material banner.png" width="350">
