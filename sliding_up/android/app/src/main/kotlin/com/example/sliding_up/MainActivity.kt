@@ -1,4 +1,4 @@
-package com.example.sliding_up_panel
+package com.example.sliding_up
 
 import io.flutter.embedding.android.FlutterActivity
 

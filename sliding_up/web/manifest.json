@@ -1,6 +1,6 @@
 {
-    "name": "sliding_up_panel",
-    "short_name": "sliding_up_panel",
+    "name": "sliding_up",
+    "short_name": "sliding_up",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

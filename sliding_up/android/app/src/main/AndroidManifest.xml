@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sliding_up_panel">
+    package="com.example.sliding_up">
    <application
-        android:label="sliding_up_panel"
+        android:label="sliding_up"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
