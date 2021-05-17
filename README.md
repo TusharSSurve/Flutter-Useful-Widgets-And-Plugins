@@ -23,3 +23,6 @@
 
 ## Material Banner
 <img src="images/material banner.png" width="350">
+
+## Sliding Up Panel
+<img src="images/sliding-up-panel.gif" width="350">
