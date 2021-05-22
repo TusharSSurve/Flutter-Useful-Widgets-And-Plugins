@@ -26,3 +26,6 @@
 
 ## Sliding Up Panel
 <img src="images/sliding-up-panel.gif" width="350">
+
+## Reorderable List View
+<img src="images/reorderable-listview.gif" width="350">
